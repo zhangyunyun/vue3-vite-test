@@ -1,0 +1,1 @@
+export const PRIMARY_COLOR = "(244,244,244,1)"

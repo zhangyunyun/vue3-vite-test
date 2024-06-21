@@ -1,0 +1,1 @@
+export * from './home'  //将home中定义的属性全部暴露出去

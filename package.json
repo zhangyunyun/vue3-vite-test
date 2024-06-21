@@ -1,0 +1,46 @@
+{
+  "name": "v3-vite-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
+    "@element-plus/icons-vue": "^2.1.0",
+    "amfe-flexible": "^2.2.1",
+    "ant-design-vue": "^3.2.20",
+    "axios": "^1.4.0",
+    "dayjs": "^1.11.10",
+    "echarts": "^5.4.2",
+    "element-plus": "^2.3.5",
+    "esbuild-windows-64": "^0.15.18",
+    "lib-flexible": "^0.3.2",
+    "node-gyp": "^9.4.0",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.1.1",
+    "vant": "^4.4.1",
+    "vite-plugin-commonjs": "^0.7.1",
+    "vue": "^3.2.47",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-commonjs": "^1.0.3",
+    "@types/node": "^20.2.5",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "postcss-pxtorem": "^6.0.0",
+    "sass": "^1.62.1",
+    "tslib": "^2.5.3",
+    "typescript": "^5.0.2",
+    "unplugin-auto-import": "^0.15.3",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.3.2",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue-tsc": "^1.4.2"
+  }
+}
