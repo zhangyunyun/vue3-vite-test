@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { computed, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 
-import type { ISearchResult } from '@/types' //自定义数据类型
+import type { ISearchResultList } from '@/types' //自定义数据类型
 
 import { useToggle } from '@/hooks/useToggle.ts' //引入切换动画
 import { useDebounce } from '@/hooks/useDebounce.ts'
@@ -20,7 +19,7 @@ const showAction = ref(true)
 const searchValue = ref('')  //搜索框输入的值
 const [INIT, DOING, DONE] = [-1, 1, 0]  //加载的状态 初始-1  加载成功 0 正在加载1
 const searchLoading = ref(INIT)  //加载初始值
-const searchResult = ref([] as ISearchResult[])   //搜索的结果列表
+const searchResult = ref([] as ISearchResultList[])   //搜索的结果列表
 
 const onSearch = async (v ?:string | number) => {
    try {
@@ -85,7 +84,7 @@ watch(debounceValue, (nv) => {
 </script>
 
 <template>
-   <div class="search-view">
+   <div class="search-page">
       <OpSearch 
          :showAction="showAction" 
          v-model="searchValue" 
@@ -97,7 +96,7 @@ watch(debounceValue, (nv) => {
            <div @click="emits('cancel')">取消</div>
         </template>-->
       </OpSearch>
-      <div v-if="!searchValue" class="search-view__history">
+      <div v-if="!searchValue" class="search-page__history">
          <div class="label">历史搜索</div>
          <!-- <transition-group move-class="move"> -->
          <div class="history-tag" v-for="v in historyTags" :key="v" @click="onTagClick(v)">
@@ -109,7 +108,7 @@ watch(debounceValue, (nv) => {
          </div>
          <!-- </transition-group> -->
       </div>
-      <div v-else class="search-view__result">
+      <div v-else class="search-page__result">
          <div class="searching" v-if="searchLoading === DOING">~数据加载中~</div>
          <template v-if="searchLoading === DONE">
             <div class="no-result" v-if="!searchResult.length">~暂无数据~</div>
@@ -139,7 +138,7 @@ watch(debounceValue, (nv) => {
    transform: translateY(20px)
 }
 
-.search-view {
+.search-page {
    position: fixed;
    top: 0;
    right: 0;

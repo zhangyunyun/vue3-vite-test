@@ -2,7 +2,7 @@
 import { ref, onMounted} from 'vue'
 import type { IScrollBarInfo } from '@/types'
 import { useInterval } from '@/hooks/useInterval'
-import { useTimeout } from '@/hooks/useTimeout'
+// import { useTimeout } from '@/hooks/useTimeout'
 /*
   ? 这里的?表示可选的
   withDefaults设置props的默认值
@@ -27,19 +27,19 @@ const scrollBar = () => {
   const firstSwipeItem = container.children[0] //获取dom元素下第一个元素
   const containerHeight = count * props.height  //dom元素滚动的总高度(子元素的个数 * 一个子元素的高度)
   container.style.height = `${containerHeight}px` //设置高度
-  let index = 0  //滚动元素滚动到第几个
+  let index = 0  //滚动元素,滚动到第几个
   useInterval(() => {
     index++
     //如果index超过item的个数，将第一个元素接到最后一个元素后面
     if(index >= count){
       firstSwipeItem.style.transform = `translateY(${index * props.height}px)`
       //如果第一个元素滚动结束之后，将整个container位置重置
-      const clear = useTimeout(() => {
+      const timeout = setTimeout(() => {
         //重置逻辑，就是将当前设置的样式复原
         firstSwipeItem.style.transform = ''
         container.style.transform = ''
         container.style.transition = ''
-        clear()
+        clearTimeout(timeout)
       },props.transitionTime)
     }
     container.style.transform = `translateY(-${index * props.height}px)`
@@ -150,10 +150,10 @@ onMounted(() => {
       vertical-align:middle;
     }
     .info-badge {
-      width:60px;
+      width:50px;
       div{
         border-radius: 5px;
-        padding: 2px 6px;
+        padding:0 2px;
         color: white;
         margin-right: 6px;
         font-size: 12px;
@@ -175,8 +175,8 @@ onMounted(() => {
         padding: 3px 14px;
         font-size: 12px;
         width:70px;
-        height:30px;
-        line-height:26px;
+        height:28px;
+        line-height:22px;
         &.op-thin-border:before {
           border-radius: 50px;
         }

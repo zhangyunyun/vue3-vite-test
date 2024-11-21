@@ -62,6 +62,7 @@ ajax.interceptors.response.use(
       }
       //请求成功
       return data  //直接返回了data数据
-   })
+   }
+)
 
 export default ajax

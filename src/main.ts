@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia  } from 'pinia'
 import App from './App.vue'
 import router from '../src/router/index'
 
@@ -8,6 +9,7 @@ import 'ant-design-vue/dist/antd.css'
 
 //引入vant
 import 'vant/lib/index.css'
+import { Loading } from 'vant';
 
 import './style.css'
 import './assets/common.scss'
@@ -15,7 +17,7 @@ import './assets/common.scss'
 //引入echarts
 import * as echarts from 'echarts'
 
-import { createPinia  } from 'pinia'
+//pinia
 const pinia = createPinia()
 
 const app = createApp(App)
@@ -23,6 +25,7 @@ const app = createApp(App)
 app.config.globalProperties.$echarts = echarts
 app.use(router)
 app.use(pinia)
+app.use(Loading)
 
 //统一设置body的基础font-size大小
 const rootValue = 16 //设计稿中的fontsize

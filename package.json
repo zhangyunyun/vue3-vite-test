@@ -11,6 +11,7 @@
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
     "@element-plus/icons-vue": "^2.1.0",
+    "@types/pubsub-js": "^1.8.6",
     "amfe-flexible": "^2.2.1",
     "ant-design-vue": "^3.2.20",
     "axios": "^1.4.0",
@@ -22,6 +23,7 @@
     "node-gyp": "^9.4.0",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.1",
+    "pubsub-js": "^1.9.4",
     "vant": "^4.4.1",
     "vite-plugin-commonjs": "^0.7.1",
     "vue": "^3.2.47",
@@ -42,5 +44,9 @@
     "vite": "^4.3.2",
     "vite-plugin-vue-setup-extend": "^0.4.0",
     "vue-tsc": "^1.4.2"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/zhangyunyun/v3-vite-test.git",
+  "author": "v3-vite-test <876023825@qq.com>",
+  "license": "MIT"
 }

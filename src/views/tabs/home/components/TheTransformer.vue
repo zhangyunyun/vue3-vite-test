@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { ITransformer } from '@/types'
 interface IProps{
    transformerList:ITransformer[]
 }
@@ -76,13 +77,13 @@ defineProps<IProps>()
   grid-template-columns: repeat(5, 1fr); //一行5列平均等分
   padding:5px 10px;
   &__item {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 15px;
     text-align: center;
     margin:5px 0;
     img {
       margin:0 auto;
-      width:48px;
+      width:40px;
     }
     .label{
       margin-top:5px;

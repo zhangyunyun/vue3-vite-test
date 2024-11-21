@@ -1,11 +1,11 @@
 <script setup lang="ts">
 //---定义属性(数据类型)
 interface IProps{
-  showAction?:Boolean //是否显示
-  background?:String, //搜索整体背景色
-  shape?:String, //input圆角
-  placeholder?:String, //默认显示的文本提示
-  modelValue?:String | Number //输入的值
+  showAction?:boolean //是否显示
+  background?:string, //搜索整体背景色
+  shape?:string, //input圆角
+  placeholder?:string, //默认显示的文本提示
+  modelValue?:string | number //输入的值
 }
 const props = defineProps<IProps>()
 
@@ -15,10 +15,10 @@ interface IEmits{
     void用来表示空
     void是可以指向任何类型的数据
   */
-  (e:'search', v?: String | Number) : void  //搜索
+  (e:'search', v?: string | number) : void  //搜索
   (e:'cancel') : void //取消搜索
   (e:'clear') : void  //清空文本框的值
-  (e:'update:modelValue', v?: String | Number) : void //更新modelValue的值
+  (e:'update:modelValue', v?: string | number) : void //更新modelValue的值
   (e:'inputClick') : void
 }
 const emits = defineEmits<IEmits>()

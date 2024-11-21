@@ -13,11 +13,11 @@ export function useAsync<T>(asyncFun: () => Promise<T>, initValue: T, immediate 
   const data = ref(initValue)
   const error = ref(null)
   const execute = function () {
-    //请求成功
     pending.value = true
     error.value = null
     return asyncFun()
       .then(res => {
+        //请求成功
         data.value = res as UnwrapRef<T> //返回成功的结果数据,UnwrapRef是单层解包
         pending.value = false
       }).catch(err => {

@@ -2,8 +2,8 @@
    包含n多个函数请求模块
    返回值是 promise对象
 */
-import type { ISearchResultList } from '@/types'
 import Ajax from './ajax.ts'
+import type { ISearchResultList } from '@/types'
 
 /* 
    请求搜索接口函数

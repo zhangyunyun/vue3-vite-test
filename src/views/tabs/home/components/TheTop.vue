@@ -93,7 +93,7 @@ const emits = defineEmits<IEmits>()
           <div @click="emits('searchClick')">搜索</div>
         </template>
       </OpSearch>-->
-      <!-- 情况三 hooks-useToggle实现搜索页展示 -->
+      <!-- 情况三 hooks-useToggle实现搜索页展示 VanSticky添加粘性布局固定搜索框-->
       <VanSticky>
         <OpSearch 
           shape="round"

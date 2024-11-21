@@ -21,7 +21,7 @@ type CurrentTime = {
 */
 type UseCountDownOptions = {
   time: number //需要倒计时多长时间
-  millisecond?: boolean  //是否需要毫秒级别的倒计时
+  millisecond?: boolean  //是否需要毫秒级别的倒计时(类型可选)
   onChange?: (current: CurrentTime) => void  //当时间改变的时候就调用这个方法,current参数为当前时间
   onFinish?: () => void  //当倒计时时间结束后调用
 }
@@ -72,8 +72,8 @@ const isSameSecond = (time1: number, time2: number) => {
 }
 
 export function useTimeDown(options: UseCountDownOptions) {
-  let rafId: number
-  let counting: boolean  //是否已经开始计时
+  let rafId: number  //存放rAF回调函数的变量
+  let counting: boolean  //是否已经开始计时的标识
   let endTime: number  //倒计时结束的时间戳
   const remain = ref(options.time)  //需要倒计时多久
   const current = computed(() => pauseTime(remain.value))  //当前时间,通过方法pauseTime计算
@@ -83,7 +83,7 @@ export function useTimeDown(options: UseCountDownOptions) {
     counting = false
     /* 
       cancelRAF是cancelRequestAnimationFrame函数
-               是停止计时回调函数
+               是停止计时回调函数(跟clearTimeout类似)
     */
     cancelRAF(rafId)
   }
@@ -111,14 +111,15 @@ export function useTimeDown(options: UseCountDownOptions) {
     */
     if (value === 0) {
       pause() //暂停倒计时
-      options.onFinish?.()
+      options.onFinish?.() //执行完成的方法
     }
   }
 
+  //毫秒级别函数
   const microTick = () => {
     /* 
       rAF是requestAnimationFrame函数
-         是一个定时器回调函数
+         是一个定时器回调函数(类似setTimeout)
     */
     rafId = rAF(() => {
       //判断有没有超过1秒,如果过了1秒就设置remain的值
@@ -135,6 +136,7 @@ export function useTimeDown(options: UseCountDownOptions) {
     })
   }
 
+  //非毫秒级别
   const macroTick = () => {
     /* 
       rAF是requestAnimationFrame函数
@@ -178,7 +180,7 @@ export function useTimeDown(options: UseCountDownOptions) {
   const start = () => {
     if (!counting) {
       //如果没有在计时的时候，设置结束时间
-      endTime = Date.now() + remain.value
+      endTime = Date.now() + remain.value  //倒计时结束的时间戳 = 当前时间 + 还需要倒计时多久的时间
       counting = true
       tick()
     }
