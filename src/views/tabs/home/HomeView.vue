@@ -9,7 +9,7 @@ import type { IHomeInfo } from '@/types'
 import { useToggle } from '@/hooks/useToggle.ts'
 import { useAsync } from '@/hooks/useAsync.ts'
 //求函数请方法引入
-import { reqHomePageData } from '@/api/home.ts'
+import { reqHomePageData, reqShopListData} from '@/api/home.ts'
 //当前页面的配置文件
 import { PRIMARY_COLOR, TRANSPARENT } from '@/config/index'
 //当前页面模块的配置文件

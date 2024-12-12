@@ -10,27 +10,13 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ACarousel: typeof import('ant-design-vue/es')['Carousel']
-    ATabPane: typeof import('ant-design-vue/es')['TabPane']
-    ATabs: typeof import('ant-design-vue/es')['Tabs']
-    copy: typeof import('./components/OpTodo copy.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
-    LoadingView: typeof import('./components/LoadingView.vue')['default']
-    LoadView: typeof import('./components/LoadView.vue')['default']
-    OpList: typeof import('./components/list/OpList.vue')['default']
     OpLoadingView: typeof import('./components/OpLoadingView.vue')['default']
     OpSearch: typeof import('./components/OpSearch.vue')['default']
-    OpTest: typeof import('./components/OpTest.vue')['default']
     OpTodo: typeof import('./components/OpTodo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ShopList: typeof import('./components/list/ShopList.vue')['default']
-    Test: typeof import('./components/Test.vue')['default']
-    VanButton: typeof import('vant/es')['Button']
-    VanCountDown: typeof import('vant/es')['CountDown']
     VanIcon: typeof import('vant/es')['Icon']
     VanLoading: typeof import('vant/es')['Loading']
-    VanNoticeBar: typeof import('vant/es')['NoticeBar']
-    VanSearch: typeof import('vant/es')['Search']
     VanSkeleton: typeof import('vant/es')['Skeleton']
     VanSticky: typeof import('vant/es')['Sticky']
     VanSwipe: typeof import('vant/es')['Swipe']
@@ -39,8 +25,5 @@ declare module '@vue/runtime-core' {
     VanTabbar: typeof import('vant/es')['Tabbar']
     VanTabbarItem: typeof import('vant/es')['TabbarItem']
     VanTabs: typeof import('vant/es')['Tabs']
-  }
-  export interface ComponentCustomProperties {
-    vInfiniteScroll: typeof import('element-plus/es')['ElInfiniteScroll']
   }
 }

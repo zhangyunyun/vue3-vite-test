@@ -39,7 +39,7 @@
     "src/**/*.vue",
     //添加这行
     "Element-puls.d.ts"
-  ],
+, "src/components/list/OpList.tsx", "src/components/list/OpList.tsx"  ],
   "references": [
     { "path": "./tsconfig.node.json" }
   ]

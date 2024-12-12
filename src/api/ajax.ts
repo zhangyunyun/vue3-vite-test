@@ -15,7 +15,7 @@ const ajax = axios.create({
    }
 })
 
-//request拦截器
+//request 请求拦截器
 ajax.interceptors.request.use(
    config => {
       // 如果你要去localStor获取token,(如果你有)

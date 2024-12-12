@@ -15,6 +15,6 @@ export const reqHomePageData = () => {
 /* 
   请求首页商铺列表接口函数
 */
-export const reqShopList = () => {
+export const reqShopListData = () => {
   return Ajax.get('shopList')
 }
