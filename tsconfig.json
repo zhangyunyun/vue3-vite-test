@@ -26,7 +26,7 @@
     // 配置@别名
     "baseUrl": ".",
     "paths": {
-      "@/*": ["/src/*"]
+      "@/*": ["src/*"]
     }
   },
   "exclude": [
@@ -34,12 +34,14 @@
   ],
   "include": [
     "src/**/*.ts", 
-    "src/**/*.d.ts", 
     "src/**/*.tsx", 
     "src/**/*.vue",
+    "src/**/*.d.ts", 
+    "types/**/*.d.ts",
+    "types/**/*.ts",
     //添加这行
     "Element-puls.d.ts"
-, "src/components/list/OpList.tsx", "src/components/list/OpList.tsx"  ],
+  ],
   "references": [
     { "path": "./tsconfig.node.json" }
   ]

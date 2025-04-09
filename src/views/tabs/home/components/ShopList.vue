@@ -1,6 +1,14 @@
+<!--
+ * @Description  : 请好好写代码
+ * @verdion      : 
+ * @Author       : yunyunzhang
+ * @Date         : 2024-11-29 19:10:03
+ * @LastEditors  : yunyunzhang
+ * @LastEditTime : 2024-12-31 17:44:43
+-->
 <script setup lang="ts">
   import { ref } from 'vue'
-  import type { IShop } from '@/types'
+  import type { IShop } from '@types'
 
   import { reqShopList } from '@/api/shop.ts'
 
@@ -27,6 +35,7 @@
     }
   }
 </script>
+
 
 <template>
   <div class="home-shop-list">

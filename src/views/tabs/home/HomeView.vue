@@ -1,3 +1,11 @@
+<!--
+ * @Description  : 请好好写代码
+ * @verdion      : 
+ * @Author       : yunyunzhang
+ * @Date         : 2024-11-29 19:10:03
+ * @LastEditors  : yunyunzhang
+ * @LastEditTime : 2024-12-12 16:04:10
+-->
 <script setup lang="ts">
 import { ref } from 'vue'
 //哈哈，测试请求接口函数是否请求成功
@@ -9,7 +17,7 @@ import type { IHomeInfo } from '@/types'
 import { useToggle } from '@/hooks/useToggle.ts'
 import { useAsync } from '@/hooks/useAsync.ts'
 //求函数请方法引入
-import { reqHomePageData, reqShopListData} from '@/api/home.ts'
+import { reqHomePageData} from '@/api/home.ts'
 //当前页面的配置文件
 import { PRIMARY_COLOR, TRANSPARENT } from '@/config/index'
 //当前页面模块的配置文件
@@ -94,20 +102,17 @@ const onTabScroll = ({isFixed}:{isFixed:Boolean}) => {
         </div>
         <!--导航-->
         <van-tabs class="home-page__tabBar"
-        sticky 
-        offset-top="50px"
-        :color="PRIMARY_COLOR"
-        :background="tabBackgroundColor"
-        animated 
-        v-model:active="active"
-        @scroll="onTabScroll">
+          sticky 
+          offset-top="50px"
+          :color="PRIMARY_COLOR"
+          :background="tabBackgroundColor"
+          animated 
+          v-model:active="active"
+          @scroll="onTabScroll">
           <van-tab v-for="v in HOME_TABS" :key="v.value" :title="v.title">
             <component :is="v.component"></component>
           </van-tab>
         </van-tabs>
-        <!-- <div class="home-page__tabCont"> 
-          
-        </div> -->
       </OpLoadingView>
     </div>
     

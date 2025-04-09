@@ -1,16 +1,9 @@
-/*
- * @Author: v3-vite-test 876023825@qq.com
- * @Date: 2023-09-18 11:13:11
- * @LastEditors: v3-vite-test 876023825@qq.com
- * @LastEditTime: 2023-09-18 11:19:48
- * @FilePath: \v3-vite-test\src\views\tabs\home\config.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 /* 
   Todo正在开发
   ShopList推荐商品
 */
 import Todo from '@/components/OpTodo'
+// import OpList from '@/components/list/OpList'
 export const HOME_TABS = [
   {
     id:1,
